@@ -46,6 +46,7 @@ namespace CompleteProject
         public void TakeDamage (int amount, Vector3 hitPoint)
         {
             // If the enemy is dead...
+            Debug.Log("el camion");
             if(isDead)
                 // ... no need to take damage so exit the function.
                 return;

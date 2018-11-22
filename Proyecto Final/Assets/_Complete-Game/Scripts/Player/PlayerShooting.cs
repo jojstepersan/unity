@@ -49,7 +49,7 @@ namespace CompleteProject
                 Shoot ();
             }
 #else
-            // If there is input on the shoot direction stick and it's time to fire...
+          
             if ((CrossPlatformInputManager.GetAxisRaw("Mouse X") != 0 || CrossPlatformInputManager.GetAxisRaw("Mouse Y") != 0) && timer >= timeBetweenBullets)
             {
                 // ... shoot the gun
@@ -102,7 +102,7 @@ namespace CompleteProject
             if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
             {
                 // Try and find an EnemyHealth script on the gameobject hit.
-                EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
+                EnemyHealth enemyHealth = shootHit.collider.gameObject.GetComponent <EnemyHealth> ();
 
                 // If the EnemyHealth component exist...
                 if(enemyHealth != null)
